@@ -20,7 +20,6 @@ public:
     virtual ~SelectionPolicy() = default;
     //
     SelectionPolicy();
-    virtual SelectionPolicy& operator=(const SelectionPolicy& other);
     virtual PolicyType getPlcType() const = 0;
 protected:
 };
@@ -36,7 +35,7 @@ class NaiveSelection: public SelectionPolicy {
         //
         NaiveSelection(int lastSelectedIndex);
         NaiveSelection(NaiveSelection& other);
-        virtual SelectionPolicy& operator=(const SelectionPolicy& other) override;
+        NaiveSelection& operator=(const NaiveSelection& other);
         PolicyType getPlcType() const override;
     private:
         int lastSelectedIndex;
@@ -48,11 +47,11 @@ class BalancedSelection: public SelectionPolicy {
         const FacilityType& selectFacility(const vector<FacilityType>& facilitiesOptions) override;
         const string toString() const override;
         BalancedSelection *clone() const override;
-        virtual ~BalancedSelection() = default;
+        ~BalancedSelection() = default;
         //
         BalancedSelection(BalancedSelection& other);
         int maxGap(const FacilityType& facility);
-        virtual SelectionPolicy& operator=(const SelectionPolicy& other) override;
+        BalancedSelection& operator=(const BalancedSelection& other);
         PolicyType getPlcType() const override;
     private:
         int LifeQualityScore;
@@ -71,7 +70,7 @@ class EconomySelection: public SelectionPolicy {
         //
         EconomySelection(int lastSelectedIndex);
         EconomySelection(EconomySelection& other);
-        SelectionPolicy& operator=(const SelectionPolicy& other) override;
+        EconomySelection& operator=(const EconomySelection& other);
         PolicyType getPlcType() const override;
     private:
         int lastSelectedIndex;
@@ -82,13 +81,13 @@ class SustainabilitySelection : public SelectionPolicy {
         //given
         SustainabilitySelection();
         SustainabilitySelection *clone() const override;
-        virtual ~SustainabilitySelection() = default;
+        ~SustainabilitySelection() = default;
         const FacilityType& selectFacility(const vector<FacilityType>& facilitiesOptions) override;
         const string toString() const override;
         //
         SustainabilitySelection(SustainabilitySelection& other);
         SustainabilitySelection(int lastSelectedIndex);
-        virtual SelectionPolicy& operator=(const SelectionPolicy& other) override;
+        SustainabilitySelection& operator=(const SustainabilitySelection& other);
         PolicyType getPlcType() const override;
     private:
         int lastSelectedIndex;

@@ -280,7 +280,7 @@ BaseAction* Simulation::crackLine(vector<string>& orders){
         }
         else if (arg1 == "changePolicy"){
             int plan = Auxiliary::stringToInt(arg2);
-            const string policy = Auxiliary::intToStrPolic(Auxiliary::stringToInt(arg3));
+            const string& policy = arg3;
             action = new ChangePlanPolicy(plan, policy);
             action->act(*this);    
         }

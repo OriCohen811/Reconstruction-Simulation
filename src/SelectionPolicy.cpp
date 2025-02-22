@@ -101,63 +101,34 @@ EconomySelection* EconomySelection::clone() const{return new EconomySelection(la
 SustainabilitySelection* SustainabilitySelection::clone() const{return new SustainabilitySelection(lastSelectedIndex);}
 
 //operators
-SelectionPolicy& SelectionPolicy::operator=(const SelectionPolicy& other) {return *this;}
-
-SelectionPolicy& NaiveSelection::operator=(const SelectionPolicy& other) {       
+NaiveSelection& NaiveSelection::operator=(const NaiveSelection& other) {       
         if(this!=&other){
-                if(other.getPlcType()!=PolicyType::NVE){
-                        lastSelectedIndex = 0;
-                }
-                else{
-                        lastSelectedIndex = dynamic_cast<NaiveSelection*>(other.clone())->lastSelectedIndex;
-                }
+                lastSelectedIndex=other.lastSelectedIndex;
         }
         return  *this;
 }
 
-SelectionPolicy& BalancedSelection::operator=(const SelectionPolicy& other) {
+BalancedSelection& BalancedSelection::operator=(const BalancedSelection& other) {
         if(this!=&other){
-                if(other.getPlcType()==PolicyType::BAL){
-                        BalancedSelection* ot = dynamic_cast<BalancedSelection*>(other.clone());
-                        EconomyScore = ot->EconomyScore;
-                        EnvironmentScore = ot->EnvironmentScore;
-                        LifeQualityScore = ot->LifeQualityScore;
-                }
-                else{
-                        EconomyScore = 0;
-                        EnvironmentScore = 0;
-                        LifeQualityScore = 0;
-                }
-        }
-                
+                EconomyScore = other.EconomyScore;
+                EnvironmentScore = other.EnvironmentScore;
+                LifeQualityScore = other.LifeQualityScore;
+        }      
         return  *this;
 }
 
-SelectionPolicy& EconomySelection::operator=(const SelectionPolicy& other)  {
-    if (this != &other) { 
-        if (other.getPlcType() != PolicyType::ECO) {
-            lastSelectedIndex = 0;  // Reset to a default value if types do not match
-        } else {
-            const EconomySelection* ecoOther = dynamic_cast<const EconomySelection*>(&other);
-            if (ecoOther) {
-                lastSelectedIndex = ecoOther->lastSelectedIndex;  // Safely assign the value
-            }
+EconomySelection& EconomySelection::operator=(const EconomySelection& other)  {
+        if(this!=&other){
+                lastSelectedIndex=other.lastSelectedIndex;
         }
-    }
-    return *this;  
+        return  *this;
 }
 
-SelectionPolicy& SustainabilitySelection::operator=(const SelectionPolicy& other) {
+SustainabilitySelection& SustainabilitySelection::operator=(const SustainabilitySelection& other) {
         if(this!=&other){
-                if(other.getPlcType()!=PolicyType::ENV){
-                        lastSelectedIndex = 0;
-                }
-                else{
-                        lastSelectedIndex = dynamic_cast<SustainabilitySelection*>(other.clone())->lastSelectedIndex;
-                }
+                lastSelectedIndex=other.lastSelectedIndex;
         }
-        
-        return *this;
+        return  *this;
 }
 
 //getters

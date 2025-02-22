@@ -30,6 +30,7 @@ class Plan {
         Plan(const Plan& other);
         ~Plan();
         Plan& operator=(Plan& other)=delete;
+        Plan& operator=(Plan&& other)=delete;
         bool facilityExist(Facility* facility);
         const string statusToString() const;
         void printFacilities() const;
