@@ -40,11 +40,14 @@ SettlementName: AnonymousVillage
 LifeQuality_Score: 8
 Economy_Score: 5
 Environment_Score: 4
+
 PlanID: 1
 SettlementName: Rishonim
 LifeQuality_Score: 8
 Economy_Score: 16
 Environment_Score: 4
+
+
 PlanID: 2
 SettlementName: NaveSPL
 LifeQuality_Score: 6
