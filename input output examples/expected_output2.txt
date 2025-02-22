@@ -1,52 +1,64 @@
 The simulation has started
-settlement NaveSPL 1 COMPLETED
-plan NaveSPL env COMPLETED
+settlement NaveSPL 1
+plan NaveSPL env
+log
+Settlement NaveSPL CITY COMPLETED
+Plan NaveSPL env COMPLETED
+facility BalancedFacility 1 1 2 2 2
+changePolicy 2 env
 Error: Cannot change selection policy
+changePolicy 2 bal
+step 1
+planStatus 2
 planID: 2
-previousPolicy: env
-newPolicy: bal
-PlanID: 2
-SettlementName: NaveSPL
-PlanStatus: AVAILABLE
-SelectionPolicy: bal
+SettlementName NaveSPL
+planStatus: AVALIABLE
+selectionPolicy: bal
 LifeQualityScore: 4
 EconomyScore: 4
-EnvironmentScore: 4
-FacilityName: BalancedFacility
-FacilityStatus: OPERATIONAL
-FacilityName: BalancedFacility
-FacilityStatus: OPERATIONAL
-PlanID: 2
-SettlementName: NaveSPL
-PlanStatus: AVAILABLE
-SelectionPolicy: bal
+EnvrionmentScore: 4
+facilityName: BalancedFacility
+facilityStatus: OPERATIONAL
+facilityName: BalancedFacility
+facilityStatus: OPERATIONAL
+backup
+step 2
+planStatus 2
+planID: 2
+SettlementName NaveSPL
+planStatus: AVALIABLE
+selectionPolicy: bal
 LifeQualityScore: 12
 EconomyScore: 12
-EnvironmentScore: 12
-FacilityName: BalancedFacility
-FacilityStatus: OPERATIONAL
-FacilityName: BalancedFacility
-FacilityStatus: OPERATIONAL
-FacilityName: BalancedFacility
-FacilityStatus: OPERATIONAL
-FacilityName: BalancedFacility
-FacilityStatus: OPERATIONAL
-FacilityName: BalancedFacility
-FacilityStatus: OPERATIONAL
-FacilityName: BalancedFacility
-FacilityStatus: OPERATIONAL
-PlanID: 0
-SettlementName: AnonymousVillage
-LifeQuality_Score: 0
-Economy_Score: 0
-Environment_Score: 0
-PlanID: 1
-SettlementName: Rishonim
-LifeQuality_Score: 0
-Economy_Score: 0
-Environment_Score: 0
-PlanID: 2
-SettlementName: NaveSPL
-LifeQuality_Score: 4
-Economy_Score: 4
-Environment_Score: 4
+EnvrionmentScore: 12
+facilityName: BalancedFacility
+facilityStatus: OPERATIONAL
+facilityName: BalancedFacility
+facilityStatus: OPERATIONAL
+facilityName: BalancedFacility
+facilityStatus: OPERATIONAL
+facilityName: BalancedFacility
+facilityStatus: OPERATIONAL
+facilityName: BalancedFacility
+facilityStatus: OPERATIONAL
+facilityName: BalancedFacility
+facilityStatus: OPERATIONAL
+restore
+close
+planID: 0
+SettlementName AnonymousVillage
+LifeQualityScore: 0
+EconomyScore: 0
+EnvrionmentScore: 0
+
+planID: 1
+SettlementName Rishonim
+LifeQualityScore: 0
+EconomyScore: 0
+EnvrionmentScore: 0
+
+planID: 2
+SettlementName NaveSPL
+LifeQualityScore: 4
+EconomyScore: 4
+EnvrionmentScore: 4
